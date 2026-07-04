@@ -6,15 +6,8 @@
 <title>保健食品委任價目表</title>
 <style>
   :root{
-    --cream:#f6efe1;
-    --cream2:#ece0c9;
-    --ink:#2c3a33;
-    --gold:#c9a44c;
-    --gold-d:#a5822f;
-    --green:#1f4536;
-    --green2:#2e6b52;
-    --red:#c0392b;
-    --line:#e6d9bf;
+    --cream:#f6efe1;--cream2:#ece0c9;--ink:#2c3a33;--gold:#c9a44c;--gold-d:#a5822f;
+    --green:#1f4536;--green2:#2e6b52;--red:#c0392b;--line:#e6d9bf;
   }
   *{box-sizing:border-box;}
   body{
@@ -24,103 +17,52 @@
     background:
       radial-gradient(1200px 600px at 50% -200px,#fbf6ea 0%,transparent 60%),
       linear-gradient(160deg,#f6efe1 0%,#efe4cf 55%,#e9dcc2 100%);
-    background-attachment:fixed;
-    line-height:1.5;
+    background-attachment:fixed;line-height:1.5;
   }
   .wrap{max-width:1120px;margin:0 auto;padding:0 18px 60px;}
-
-  /* ---------- Hero ---------- */
   header.hero{text-align:center;padding:48px 16px 26px;}
-  .hero .rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold-d);}
+  .hero .rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold-d);font-size:1.4rem;}
   .hero .rule::before,.hero .rule::after{content:"";height:1px;width:60px;background:linear-gradient(90deg,transparent,var(--gold));}
   .hero .rule::after{background:linear-gradient(90deg,var(--gold),transparent);}
-  .hero h1{
-    font-size:clamp(1.9rem,5vw,2.8rem);
-    margin:14px 0 6px;
-    letter-spacing:.12em;
-    color:var(--green);
-    font-weight:800;
-  }
+  .hero h1{font-size:clamp(1.9rem,5vw,2.8rem);margin:14px 0 6px;letter-spacing:.12em;color:var(--green);font-weight:800;}
   .hero .sub{font-size:clamp(.95rem,2.6vw,1.15rem);color:#7a6a48;letter-spacing:.14em;}
-  .hero .promo{
-    display:inline-block;margin-top:18px;padding:8px 22px;border-radius:999px;
-    background:linear-gradient(135deg,var(--green),var(--green2));
-    color:#f4e9c8;font-weight:700;letter-spacing:.1em;font-size:.95rem;
-    box-shadow:0 6px 18px rgba(31,69,54,.28);
-    border:1px solid rgba(201,164,76,.6);
-  }
-
-  /* ---------- Nav ---------- */
-  nav.jump{
-    position:sticky;top:0;z-index:20;
-    display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
-    padding:12px;margin:8px 0 30px;
-    background:rgba(246,239,225,.85);backdrop-filter:blur(6px);
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  }
-  nav.jump a{
-    text-decoration:none;font-size:.85rem;color:var(--green);
-    padding:6px 13px;border-radius:999px;border:1px solid var(--line);
-    background:#fff;transition:.2s;white-space:nowrap;
-  }
+  .hero .promo{display:inline-block;margin-top:18px;padding:8px 22px;border-radius:999px;
+    background:linear-gradient(135deg,var(--green),var(--green2));color:#f4e9c8;font-weight:700;
+    letter-spacing:.1em;font-size:.95rem;box-shadow:0 6px 18px rgba(31,69,54,.28);border:1px solid rgba(201,164,76,.6);}
+  nav.jump{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;
+    padding:12px;margin:8px 0 30px;background:rgba(246,239,225,.9);backdrop-filter:blur(6px);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  nav.jump a{text-decoration:none;font-size:.85rem;color:var(--green);padding:6px 13px;border-radius:999px;
+    border:1px solid var(--line);background:#fff;transition:.2s;white-space:nowrap;}
   nav.jump a:hover{background:var(--green);color:#f4e9c8;border-color:var(--green);}
-
-  /* ---------- Section banner ---------- */
   section{margin-bottom:52px;scroll-margin-top:70px;}
-  .banner{
-    position:relative;text-align:center;margin:0 auto 26px;max-width:560px;
-    padding:16px 40px;border-radius:12px;
-    background:linear-gradient(135deg,var(--green) 0%,var(--green2) 100%);
-    box-shadow:0 8px 22px rgba(31,69,54,.25);
-    border:1px solid rgba(201,164,76,.5);
-    outline:1px solid rgba(201,164,76,.35);outline-offset:5px;
-  }
+  .banner{position:relative;text-align:center;margin:0 auto 26px;max-width:560px;padding:16px 40px;border-radius:12px;
+    background:linear-gradient(135deg,var(--green) 0%,var(--green2) 100%);box-shadow:0 8px 22px rgba(31,69,54,.25);
+    border:1px solid rgba(201,164,76,.5);outline:1px solid rgba(201,164,76,.35);outline-offset:5px;}
   .banner h2{margin:0;color:#f6ebca;font-size:clamp(1.15rem,3.4vw,1.5rem);letter-spacing:.08em;font-weight:800;}
   .banner .tag{display:block;margin-top:5px;color:#cbb98a;font-size:.82rem;letter-spacing:.18em;}
-  .banner::before,.banner::after{
-    content:"";position:absolute;top:50%;width:22px;height:22px;transform:translateY(-50%) rotate(45deg);
-    background:linear-gradient(135deg,var(--green2),var(--green));border:1px solid rgba(201,164,76,.5);
-  }
+  .banner::before,.banner::after{content:"";position:absolute;top:50%;width:22px;height:22px;
+    transform:translateY(-50%) rotate(45deg);background:linear-gradient(135deg,var(--green2),var(--green));border:1px solid rgba(201,164,76,.5);}
   .banner::before{left:-11px;}.banner::after{right:-11px;}
-
-  /* ---------- Product grid ---------- */
-  .grid{
-    display:grid;gap:16px;
-    grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
-  }
-  .card{
-    display:flex;flex-direction:column;
-    background:#fffdf8;border:1px solid var(--line);border-radius:16px;
-    padding:14px 12px 16px;text-align:center;
-    box-shadow:0 3px 10px rgba(120,100,60,.07);
-    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
-  }
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));}
+  .card{display:flex;flex-direction:column;background:#fffdf8;border:1px solid var(--line);border-radius:16px;
+    padding:12px 12px 16px;text-align:center;box-shadow:0 3px 10px rgba(120,100,60,.07);
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;}
   .card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(120,100,60,.16);border-color:var(--gold);}
-  .imgbox{
-    aspect-ratio:1/1;border-radius:12px;margin-bottom:12px;
-    background:radial-gradient(circle at 50% 35%,#fff,#f1ead9);
-    display:flex;align-items:center;justify-content:center;
-    border:1px solid #efe6d2;
-  }
+  .imgbox{aspect-ratio:1/1;border-radius:12px;margin-bottom:12px;background:#fff;
+    display:flex;align-items:center;justify-content:center;border:1px solid #efe6d2;overflow:hidden;}
+  .imgbox img{width:100%;height:100%;object-fit:contain;}
   .imgbox svg{width:62%;height:62%;}
-  .name{
-    font-size:.9rem;font-weight:600;color:var(--ink);
-    min-height:3.9em;display:flex;align-items:center;justify-content:center;
-    padding:0 2px;
-  }
+  .name{font-size:.9rem;font-weight:600;color:var(--ink);min-height:3.9em;
+    display:flex;align-items:center;justify-content:center;padding:0 2px;}
   .price{margin-top:auto;padding-top:10px;font-size:.85rem;color:#8a7a55;}
   .price b{color:var(--red);font-size:1.15rem;font-weight:800;margin:0 2px;letter-spacing:.02em;}
-
-  /* ---------- Consult footer ---------- */
-  .consult{
-    margin-top:40px;text-align:center;padding:34px 20px;border-radius:18px;
-    background:linear-gradient(135deg,#f0ead9,#e6dcc2);border:1px solid var(--line);
-  }
+  .consult{margin-top:40px;text-align:center;padding:34px 20px;border-radius:18px;
+    background:linear-gradient(135deg,#f0ead9,#e6dcc2);border:1px solid var(--line);}
   .consult .ico{font-size:2.4rem;}
   .consult h3{margin:8px 0 4px;color:var(--green);letter-spacing:.1em;}
   .consult p{margin:0;color:#7a6a48;font-size:.92rem;}
   footer.foot{text-align:center;color:#9a8b6a;font-size:.78rem;padding:26px 10px 0;letter-spacing:.08em;}
-
   @media (max-width:520px){
     .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;}
     .name{font-size:.84rem;min-height:3.6em;}
@@ -129,141 +71,134 @@
 </head>
 <body>
 <div class="wrap">
-
   <header class="hero">
     <div class="rule">🌿</div>
     <h1>保健食品委任價目表</h1>
     <div class="sub">美國原裝 · 精選代購目錄</div>
     <div class="promo">任選 3 瓶 · 95 折優惠</div>
   </header>
-
   <nav class="jump" id="nav"></nav>
-
   <main id="app"></main>
-
   <div class="consult">
     <div class="ico">💬</div>
     <h3>其他商品 歡迎聊聊諮詢</h3>
     <p>找不到您要的品項？歡迎私訊詢問，可協助代購。</p>
   </div>
-
   <footer class="foot">※ 以上為委任代購價，數量與價格如有異動以實際洽詢為準。</footer>
 </div>
 
 <script>
-/* 商品資料：之後要換成真實照片，只要把 img 欄位填上圖片網址即可 */
 const catalog = [
   {
     id:"sec1", title:"Life Extension · Nutricost · Xtend-Life", tag:"任選 3 瓶 95 折優惠", accent:"#1e3a5f",
     products:[
-      {name:"Life Extension 超級 Omega-3 EPA/DHA 魚油（含芝麻木脂素、橄欖萃取物、磷蝦、蝦紅素）", price:"1500"},
-      {name:"Life Extension 超級三效硒 Selenium 200mcg（100粒素食）", price:"540"},
-      {name:"Life Extension 骨質配方 Bone Restore 鈣鎂鋅等含K2", price:"1000"},
-      {name:"Nutricost D-Mannose D甘露糖膠囊 1000毫克 120顆", price:"810"},
-      {name:"Nutricost Acai 巴西莓 2200毫克 120粒", price:"720"},
-      {name:"Nutricost 牛磺酸 1000毫克 400粒膠囊", price:"1200"},
-      {name:"Nutricost 鹽酸甜菜鹼酸鹽 790毫克 240粒膠囊", price:"900"},
-      {name:"Nutricost 鹽酸甜菜鹼酸鹽 790毫克 240粒膠囊", price:"900"},
-      {name:"Xtend-Life 延長壽 女性全方位專用營養素 77種營養素 120粒", price:"2200"},
-      {name:"Xtend-Life Omega-3 / QH 優質魚油Q10 60粒膠囊", price:"1300"},
-      {name:"Xtendlife TotalLiverCare 60粒膠囊", price:"1900"},
-      {name:"Xtendlife 生育三烯酚 維生素E 60粒膠囊", price:"1800"}
+      {name:"Life Extension 超級 Omega-3 EPA/DHA 魚油（含芝麻木脂素、橄欖萃取物、磷蝦、蝦紅素）", price:"1500", img:"img/s1-01.png"},
+      {name:"Life Extension 超級三效硒 Selenium 200mcg（100粒素食）", price:"540", img:"img/s1-02.jpg"},
+      {name:"Life Extension 骨質配方 Bone Restore 鈣鎂鋅等含K2", price:"1000", img:"img/s1-03.jpg"},
+      {name:"Nutricost D-Mannose D甘露糖膠囊 1000毫克 120顆", price:"810", img:"img/s1-04.jpg"},
+      {name:"Nutricost Acai 巴西莓 2200毫克 120粒", price:"720", img:"img/s1-05.jpg"},
+      {name:"Nutricost 牛磺酸 1000毫克 400粒膠囊", price:"1200", img:"img/s1-06.jpg"},
+      {name:"Nutricost 鹽酸甜菜鹼酸鹽 790毫克 240粒膠囊", price:"900", img:"img/s1-07.jpg"},
+      {name:"Xtend-Life 延長壽 女性全方位專用營養素 77種營養素 120粒", price:"2200", img:"img/s1-08.jpg"},
+      {name:"Xtend-Life Omega-3 / QH 優質魚油Q10 60粒膠囊", price:"1300", img:"img/s1-09.jpg"},
+      {name:"Xtendlife TotalLiverCare 60粒膠囊", price:"1900", img:"img/s1-10.jpg"},
+      {name:"Xtendlife 生育三烯酚 維生素E 60粒膠囊", price:"1800", img:"img/s1-11.jpg"}
     ]
   },
   {
     id:"sec2", title:"Dr. Berg 醫師系列", tag:"任選 3 瓶 95 折優惠", accent:"#2e6b52",
     products:[
-      {name:"益生菌 30粒", price:"1050"},
-      {name:"黑仔油", price:"1200"},
-      {name:"DIM", price:"1250"},
-      {name:"十字花科", price:"1850"},
-      {name:"B1+", price:"1200"},
-      {name:"神經支持", price:"1700"},
-      {name:"甘胺酸鎂 90/150粒", price:"1550 / 1450"},
-      {name:"甘胺酸鎂粉", price:"1550"},
-      {name:"血糖支持", price:"1600"},
-      {name:"全維生素礦物質", price:"1700"},
-      {name:"Liver Cleanse 肝臟淨化", price:"1250"},
-      {name:"Sleep Aid 睡眠支持", price:"1800"},
-      {name:"海藻碘", price:"1550"},
-      {name:"消化配方", price:"1280"},
-      {name:"腎上腺皮質醇", price:"1600"},
+      {name:"益生菌 30粒", price:"1050", img:"img/s2-01.jpg"},
+      {name:"黑仔油", price:"1200", img:"img/s2-02.jpg"},
+      {name:"DIM", price:"1250", img:"img/s2-03.jpg"},
+      {name:"十字花科", price:"1850", img:"img/s2-04.jpg"},
+      {name:"B1+", price:"1200", img:"img/s2-05.jpg"},
+      {name:"神經支持", price:"1700", img:"img/s2-06.jpg"},
+      {name:"甘胺酸鎂 90/150粒", price:"1550 / 1450", img:"img/s2-07.jpg"},
+      {name:"甘胺酸鎂粉", price:"1550", img:"img/s2-08.jpg"},
+      {name:"血糖支持", price:"1600", img:"img/s2-09.jpg"},
+      {name:"全維生素礦物質", price:"1700", img:"img/s2-10.jpg"},
+      {name:"Liver Cleanse 肝臟淨化", price:"1250", img:"img/s2-11.jpg"},
+      {name:"Sleep Aid 睡眠支持", price:"1800", img:"img/s2-12.jpg"},
+      {name:"海藻碘", price:"1550", img:"img/s2-13.jpg"},
+      {name:"消化配方", price:"1280", img:"img/s2-14.jpg"},
+      {name:"腎上腺皮質醇", price:"1600", img:"img/s2-15.jpg"},
       {name:"L-茶胺酸", price:"1350"},
-      {name:"南非醉茄", price:"1150"},
+      {name:"南非醉茄", price:"1150", img:"img/s2-17.jpg"},
       {name:"甲鈷銨 B12", price:"1100"},
-      {name:"微量元素強化膠囊", price:"1750"},
-      {name:"鱈魚肝油", price:"1400"},
-      {name:"電解質粉 100次份", price:"2300"},
-      {name:"電解質隨身包", price:"1600"},
-      {name:"電解質膠囊", price:"1350"},
-      {name:"小麥草汁 檸檬口味", price:"1900"},
-      {name:"維他命 C", price:"1500"},
-      {name:"酵母錠", price:"1400"},
-      {name:"膽囊配方", price:"1640"},
-      {name:"薑黃素", price:"1150"},
-      {name:"頭髮配方", price:"1800"},
-      {name:"鋅", price:"1080"},
+      {name:"微量元素強化膠囊", price:"1750", img:"img/s2-19.jpg"},
+      {name:"鱈魚肝油", price:"1400", img:"img/s2-20.jpg"},
+      {name:"電解質粉 100次份", price:"2300", img:"img/s2-21.jpg"},
+      {name:"電解質隨身包", price:"1600", img:"img/s2-22.jpg"},
+      {name:"電解質膠囊", price:"1350", img:"img/s2-23.jpg"},
+      {name:"小麥草汁 檸檬口味", price:"1900", img:"img/s2-24.jpg"},
+      {name:"維他命 C", price:"1500", img:"img/s2-25.jpg"},
+      {name:"酵母錠", price:"1400", img:"img/s2-26.jpg"},
+      {name:"膽囊配方", price:"1640", img:"img/s2-27.jpg"},
+      {name:"薑黃素", price:"1150", img:"img/s2-28.jpg"},
+      {name:"頭髮配方", price:"1800", img:"img/s2-29.jpg"},
+      {name:"鋅", price:"1080", img:"img/s2-30.jpg"},
       {name:"接骨木", price:"1300"},
-      {name:"B3", price:"1000"},
+      {name:"B3", price:"1000", img:"img/s2-32.jpg"},
       {name:"TUDCA", price:"1180"},
-      {name:"膠原蛋白勝肽", price:"1750"}
+      {name:"膠原蛋白勝肽", price:"1750", img:"img/s2-34.jpg"}
     ]
   },
   {
     id:"sec3", title:"美國功能醫學診所專用", tag:"Microbiome Labs · Fatty15", accent:"#6a4c93",
     products:[
-      {name:"Microbiome Labs HU58 高效孢子益生菌（60粒膠囊）", price:"2250"},
+      {name:"Microbiome Labs HU58 高效孢子益生菌（60粒膠囊）", price:"2250", img:"img/s3-01.jpg"},
       {name:"Microbiome Labs ZenBiome Sleep 益生菌睡眠支持（30粒膠囊）", price:"2800"},
-      {name:"Microbiome Labs Digest Mate 14種消化酵素+30億益生菌（120粒膠囊）", price:"2500"},
-      {name:"Microbiome Labs MegaSporeBiotic 5種研究驗證芽孢桿菌菌株（60顆）", price:"3300"},
+      {name:"Microbiome Labs Digest Mate 14種消化酵素+30億益生菌（120粒膠囊）", price:"2500", img:"img/s3-03.jpg"},
+      {name:"Microbiome Labs MegaSporeBiotic 5種研究驗證芽孢桿菌菌株（60顆）", price:"3300", img:"img/s3-04.jpg"},
       {name:"Fatty15 C15 三個月用量，3倍Omega-3魚油的細胞益處", price:"5900"}
     ]
   },
   {
     id:"sec4", title:"Double Wood 系列", tag:"任選 3 瓶 95 折優惠", accent:"#8b6f3f",
     products:[
-      {name:"Double Wood L-蘇糖酸鎂", price:"1040"},
-      {name:"Double Wood 甘胺酸鎂", price:"900"},
-      {name:"Double Wood PQQ", price:"1140"},
-      {name:"Double Wood TUDCA", price:"1020"},
-      {name:"Double Wood Benfotiamine 脂溶性B1", price:"940"},
-      {name:"Double Wood 白藜蘆醇 + 反式白藜蘆醇", price:"1030"},
-      {name:"Double Wood 芹菜素", price:"1030"},
-      {name:"Double Wood NMN", price:"1650"},
-      {name:"Double Wood 脂質體穀胱甘肽", price:"1360"},
-      {name:"Double Wood 蚓激酶", price:"1080"},
-      {name:"Double Wood 甘胺酸", price:"1130"},
-      {name:"Double Wood 鋅", price:"1080"},
-      {name:"Double Wood 檞皮素 + 鳳梨蛋白酶", price:"1280"},
-      {name:"Double Wood 青蒿素", price:"1300"},
-      {name:"Double Wood 麥角硫因", price:"1250"},
-      {name:"Double Wood 獅鬃菇", price:"1200"},
-      {name:"Double Wood NAC", price:"1380"},
-      {name:"Double Wood 蘿蔔硫素", price:"950"}
+      {name:"Double Wood L-蘇糖酸鎂", price:"1040", img:"img/s4-01.jpg"},
+      {name:"Double Wood 甘胺酸鎂", price:"900", img:"img/s4-02.jpg"},
+      {name:"Double Wood PQQ", price:"1140", img:"img/s4-03.jpg"},
+      {name:"Double Wood TUDCA", price:"1020", img:"img/s4-04.jpg"},
+      {name:"Double Wood Benfotiamine 脂溶性B1", price:"940", img:"img/s4-05.jpg"},
+      {name:"Double Wood 白藜蘆醇 + 反式白藜蘆醇", price:"1030", img:"img/s4-06.jpg"},
+      {name:"Double Wood 芹菜素", price:"1030", img:"img/s4-07.jpg"},
+      {name:"Double Wood NMN", price:"1650", img:"img/s4-08.jpg"},
+      {name:"Double Wood 脂質體穀胱甘肽", price:"1360", img:"img/s4-09.jpg"},
+      {name:"Double Wood 蚓激酶", price:"1080", img:"img/s4-10.jpg"},
+      {name:"Double Wood 甘胺酸", price:"1130", img:"img/s4-11.jpg"},
+      {name:"Double Wood 鋅", price:"1080", img:"img/s4-12.jpg"},
+      {name:"Double Wood 檞皮素 + 鳳梨蛋白酶", price:"1280", img:"img/s4-13.jpg"},
+      {name:"Double Wood 青蒿素", price:"1300", img:"img/s4-14.jpg"},
+      {name:"Double Wood 麥角硫因", price:"1250", img:"img/s4-15.jpg"},
+      {name:"Double Wood 獅鬃菇", price:"1200", img:"img/s4-16.jpg"},
+      {name:"Double Wood NAC", price:"1380", img:"img/s4-17.jpg"},
+      {name:"Double Wood 蘿蔔硫素", price:"950", img:"img/s4-18.jpg"}
     ]
   },
   {
     id:"sec5", title:"精選綜合品牌", tag:"任選 3 瓶 95 折優惠", accent:"#1a2a4a",
     products:[
-      {name:"MyReuteri 羅伊氏菌 200億 30顆", price:"2600"},
-      {name:"Toniiq 羅伊氏菌 500億 60顆", price:"1700"},
-      {name:"It's Just! INULIN 菊粉益生元纖維 甜味劑 11盎司", price:"1250"},
-      {name:"高效螺旋桿菌 羅伊乳桿菌 五合一益生菌 專利Pylopass", price:"2150"},
-      {name:"Sambugra TUDCA 1100mg 60顆", price:"1240"},
-      {name:"Sharoaid TUDCA 1200mg 60粒", price:"1150"},
+      {name:"MyReuteri 羅伊氏菌 200億 30顆", price:"2600", img:"img/s5-01.jpg"},
+      {name:"Toniiq 羅伊氏菌 500億 60顆", price:"1700", img:"img/s5-02.jpg"},
+      {name:"It's Just! INULIN 菊粉益生元纖維 甜味劑 11盎司", price:"1250", img:"img/s5-03.jpg"},
+      {name:"高效螺旋桿菌 羅伊乳桿菌 五合一益生菌 專利Pylopass", price:"2150", img:"img/s5-04.jpg"},
+      {name:"Sambugra TUDCA 1100mg 60顆", price:"1240", img:"img/s5-05.jpg"},
+      {name:"Sharoaid TUDCA 1200mg 60粒", price:"1150", img:"img/s5-06.jpg"},
       {name:"Totalia TUDCA 1200mg 120粒", price:"1350"},
-      {name:"Qunol Mega 泛醇還原型 CoQ10 100粒", price:"1500"},
-      {name:"CODEAGE Akkermansia（AKK菌）500 Ultra 90粒", price:"2000"},
-      {name:"三倍強度 DHA Omega-3 魚油 3600毫克 120粒", price:"1700"},
-      {name:"Type Zero 磷脂醯絲胺酸", price:"1400"},
-      {name:"A.C. Grace 純生育三烯酚", price:"1800"},
-      {name:"Sunergetic 生育三烯酚維生素E", price:"1800"},
-      {name:"Sports Research 專利薑黃素C3", price:"1100"},
-      {name:"Quality of Life Kinoko Platinum AHCC菇草精元素 750毫克 60粒", price:"3650"},
-      {name:"Codeage 磷脂體尿石素A 60粒", price:"4700"},
-      {name:"Pure 脂質體專利維生素C 120粒", price:"1800"},
-      {name:"Pure 活性維生素B6（P5P）60粒", price:"1200"},
-      {name:"專利亞精胺 LIFE Extra+ 1300毫克", price:"5300"}
+      {name:"Qunol Mega 泛醇還原型 CoQ10 100粒", price:"1500", img:"img/s5-08.jpg"},
+      {name:"CODEAGE Akkermansia（AKK菌）500 Ultra 90粒", price:"2000", img:"img/s5-09.jpg"},
+      {name:"三倍強度 DHA Omega-3 魚油 3600毫克 120粒", price:"1700", img:"img/s5-10.jpg"},
+      {name:"Type Zero 磷脂醯絲胺酸", price:"1400", img:"img/s5-11.jpg"},
+      {name:"A.C. Grace 純生育三烯酚", price:"1800", img:"img/s5-12.jpg"},
+      {name:"Sunergetic 生育三烯酚維生素E", price:"1800", img:"img/s5-13.jpg"},
+      {name:"Sports Research 專利薑黃素C3", price:"1100", img:"img/s5-14.jpg"},
+      {name:"Quality of Life Kinoko Platinum AHCC菇草精元素 750毫克 60粒", price:"3650", img:"img/s5-15.jpg"},
+      {name:"Codeage 磷脂體尿石素A 60粒", price:"4700", img:"img/s5-16.jpg"},
+      {name:"Pure 脂質體專利維生素C 120粒", price:"1800", img:"img/s5-17.jpg"},
+      {name:"Pure 活性維生素B6（P5P）60粒", price:"1200", img:"img/s5-18.jpg"},
+      {name:"專利亞精胺 LIFE Extra+ 1300毫克", price:"5300", img:"img/s5-19.jpg"}
     ]
   }
 ];
@@ -275,7 +210,6 @@ function bottle(accent){
     <rect x="26" y="23" width="48" height="103" rx="11" fill="${accent}" opacity=".14"/>
     <rect x="26" y="23" width="48" height="103" rx="11" fill="none" stroke="${accent}" stroke-width="2.2" opacity=".45"/>
     <rect x="31" y="50" width="38" height="56" rx="6" fill="#fff"/>
-    <rect x="31" y="50" width="38" height="56" rx="6" fill="none" stroke="${accent}" stroke-width="1.4" opacity=".3"/>
     <rect x="37" y="60" width="26" height="4" rx="2" fill="${accent}" opacity=".55"/>
     <rect x="40" y="70" width="20" height="3" rx="1.5" fill="${accent}" opacity=".3"/>
     <rect x="40" y="77" width="20" height="3" rx="1.5" fill="${accent}" opacity=".3"/>
@@ -285,26 +219,19 @@ function bottle(accent){
 
 const nav = document.getElementById("nav");
 const app = document.getElementById("app");
-
 catalog.forEach(sec=>{
-  // nav link
   const a = document.createElement("a");
   a.href = "#"+sec.id;
   a.textContent = sec.title.split(" · ")[0].split("·")[0].trim();
   nav.appendChild(a);
-
-  // section
   const s = document.createElement("section");
   s.id = sec.id;
   s.innerHTML = `
-    <div class="banner">
-      <h2>${sec.title}</h2>
-      <span class="tag">${sec.tag}</span>
-    </div>
+    <div class="banner"><h2>${sec.title}</h2><span class="tag">${sec.tag}</span></div>
     <div class="grid">
       ${sec.products.map(p=>`
         <div class="card">
-          <div class="imgbox">${p.img ? `<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain;border-radius:12px;">` : bottle(sec.accent)}</div>
+          <div class="imgbox">${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : bottle(sec.accent)}</div>
           <div class="name">${p.name}</div>
           <div class="price">委任價 <b>${p.price}</b> 元</div>
         </div>`).join("")}
