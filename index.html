@@ -92,7 +92,7 @@ const catalog = [
   {
     id:"sec1", title:"Life Extension · Nutricost · Xtend-Life", tag:"任選 3 瓶 95 折優惠", accent:"#1e3a5f",
     products:[
-      {name:"Life Extension 超級 Omega-3 EPA/DHA 魚油（含芝麻木脂素、橄欖萃取物、磷蝦、蝦紅素）", price:"1500", img:"img/s1-01.png"},
+      {name:"Life Extension 超級 Omega-3 EPA/DHA 魚油（含芝麻木脂素、橄欖萃取物、磷蝦、蝦紅素）", price:"1500", img:"img/s1-01.jpg"},
       {name:"Life Extension 超級三效硒 Selenium 200mcg（100粒素食）", price:"540", img:"img/s1-02.jpg"},
       {name:"Life Extension 骨質配方 Bone Restore 鈣鎂鋅等含K2", price:"1000", img:"img/s1-03.jpg"},
       {name:"Nutricost D-Mannose D甘露糖膠囊 1000毫克 120顆", price:"810", img:"img/s1-04.jpg"},
@@ -222,7 +222,7 @@ const app = document.getElementById("app");
 catalog.forEach(sec=>{
   const a = document.createElement("a");
   a.href = "#"+sec.id;
-  a.textContent = sec.title.split(" · ")[0].split("·")[0].trim();
+  a.textContent = sec.title;
   nav.appendChild(a);
   const s = document.createElement("section");
   s.id = sec.id;
