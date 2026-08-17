@@ -52,9 +52,14 @@
   .badge-new{position:absolute;top:9px;left:9px;z-index:3;background:linear-gradient(135deg,#e74c3c,#c0392b);
     color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.06em;padding:3px 9px;border-radius:8px;
     box-shadow:0 2px 6px rgba(192,57,43,.45);text-transform:uppercase;}
-  .imgbox{aspect-ratio:1/1;border-radius:12px;margin-bottom:12px;background:#fff;
+  .imgbox{position:relative;aspect-ratio:1/1;border-radius:12px;margin-bottom:12px;background:#fff;
     display:flex;align-items:center;justify-content:center;border:1px solid #efe6d2;overflow:hidden;}
   .imgbox img{width:100%;height:100%;object-fit:contain;}
+  .imgbox a{display:flex;width:100%;height:100%;align-items:center;justify-content:center;cursor:pointer;}
+  .hint-intro{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);z-index:2;
+    background:rgba(31,69,54,.92);color:#f4e9c8;font-size:.66rem;font-weight:700;letter-spacing:.04em;
+    padding:3px 10px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.2);pointer-events:none;}
+  .card:hover .hint-intro{background:var(--gold);color:#3a2e10;}
   .imgbox svg{width:62%;height:62%;}
   .name{font-size:.9rem;font-weight:600;color:var(--ink);min-height:3.9em;
     display:flex;align-items:center;justify-content:center;padding:0 2px;}
@@ -158,7 +163,7 @@ const catalog = [
       {name:"Microbiome Labs HU58 高效孢子益生菌（60粒膠囊）", price:"2250", img:"img/s3-01.jpg"},
       {name:"Microbiome Labs ZenBiome Sleep 益生菌睡眠支持（30粒膠囊）", price:"2800", img:"img/s3-02.jpg"},
       {name:"Microbiome Labs Digest Mate 14種消化酵素+30億益生菌（120粒膠囊）", price:"2500", img:"img/s3-03.jpg"},
-      {name:"Microbiome Labs MegaSporeBiotic 5種研究驗證芽孢桿菌菌株（60顆）", price:"3300", img:"img/s3-04.jpg"},
+      {name:"Microbiome Labs MegaSporeBiotic 5種研究驗證芽孢桿菌菌株（60顆）", price:"3300", img:"img/s3-04.jpg", link:"mega-sporebiotic.html"},
       {name:"Fatty15 C15 三個月用量，3倍Omega-3魚油的細胞益處", price:"5900", img:"img/s3-05.jpg"},
       {name:"【女性專屬】高機能私密益生菌 獨特的四重功效", price:"1690", img:"img/s3-06.jpg"},
       {name:"Metagenics SPM", price:"3100", img:"img/s3-07.jpg", isNew:true},
@@ -243,13 +248,19 @@ catalog.forEach(sec=>{
   s.innerHTML = `
     <div class="banner"><h2>${sec.title}</h2><span class="tag">${sec.tag}</span></div>
     <div class="grid">
-      ${sec.products.map(p=>`
+      ${sec.products.map(p=>{
+        const media = p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : bottle(sec.accent);
+        const imgbox = p.link
+          ? `<a href="${p.link}" target="_blank" rel="noopener">${media}</a><span class="hint-intro">🔍 點我看介紹</span>`
+          : media;
+        return `
         <div class="card">
           ${p.isNew ? '<span class="badge-new">NEW</span>' : ''}
-          <div class="imgbox">${p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : bottle(sec.accent)}</div>
+          <div class="imgbox">${imgbox}</div>
           <div class="name">${p.name}</div>
           <div class="price">委任價 <b>${p.price}</b> 元</div>
-        </div>`).join("")}
+        </div>`;
+      }).join("")}
     </div>`;
   app.appendChild(s);
 });
